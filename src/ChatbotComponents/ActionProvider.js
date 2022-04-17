@@ -1,3 +1,5 @@
+import quotes from './inspirational_quotes'
+
 class ActionProvider {
   constructor(
    createChatBotMessage,
@@ -20,7 +22,19 @@ class ActionProvider {
   }
 
   inspirationalQuote() {
-    
+    const random = Math.floor(Math.random() * quotes.length)
+    const Message = this.createChatBotMessage(quotes[random])
+    this.updateChatbotState(Message)
+  }
+
+  help() {
+    const helpMessage = this.createChatBotMessage("I would love to help you. I am your #1 supporter!")
+    this.updateChatbotState(helpMessage)
+  }
+
+  hw() {
+    const hwMessage = this.createChatBotMessage("I am excellent at doing my homework! I turn in all my assignments on time.")
+    this.updateChatbotState(hwMessage)
   }
 
   updateChatbotState(message) {

@@ -10,8 +10,14 @@ class MessageParser {
     if (lowercaseMessage.includes('hello')) {
       this.actionProvider.greet()
     }
+    else if (lowercaseMessage.includes('help')) {
+      this.actionProvider.help()
+    }
+    else if (lowercaseMessage.includes('hw') || lowercaseMessage.includes('homework')) {
+      this.actionProvider.hw()
+    }
     else {
-      
+      this.actionProvider.inspirationalQuote()
     }
   }
 }
